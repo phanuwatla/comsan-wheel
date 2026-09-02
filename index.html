@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Wheel - วงล้อสุ่มแบบกำหนดโอกาส (%)</title>
+  <link rel="icon" type="image/svg+xml" href="comsan-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="3465.37 501.284 2289.26 1997.43" width="26" height="26" fill="currentColor">
+            <g id="am1">
+              <g id="am2">
+                <path id="am3" fill="currentColor" d="M5445.71,1802.99 C5423.49,1744.45,5344.26,1735.89,5310.05,1788.33 C5310.05,1788.33,5001.33,2261.57,5001.33,2261.57 C4949.59,2340.88,5007.68,2445.77,5102.32,2443.93 C5102.32,2443.93,5671.37,2432.87,5671.37,2432.87 C5743.66,2431.47,5781.11,2345.97,5733.14,2291.84 C5733.14,2291.84,5575.07,2113.42,5575.07,2113.42 C5561.76,2098.41,5551.3,2081.1,5544.17,2062.35 C5544.17,2062.35,5445.71,1802.99,5445.71,1802.99 z"/>
+                <path id="am4" fill="currentColor" d="M4572.8,1564.17 C4572.8,1564.17,4572.8,1564.17,4572.8,1564.18 C4572.8,1564.18,4867.11,1764.71,4867.11,1764.71 C4867.11,1764.71,4867.11,1764.72,4867.1,1764.72 C4867.1,1764.72,4578.83,1821.63,4578.83,1821.63 C4578.83,1821.63,4578.83,1821.63,4578.83,1821.63 C4578.83,1821.63,4435.19,2380.97,4435.19,2380.97 C4435.19,2380.98,4435.19,2380.98,4435.19,2380.98 C4085.44,2434.14,4000.17,2231.06,3981.45,2161.78 C3975.41,2139.45,3956.92,2122.68,3934.12,2118.86 C3926.96,2117.67,3920.6,2118.02,3914.96,2119.58 C3892.45,2125.79,3881.64,2151.16,3879.2,2173.14 C3878.41,2180.22,3878.94,2187.39,3880.74,2194.28 C3899.31,2265.23,4057.45,2750.28,4826.31,2327.86 C4826.31,2327.86,4826.31,2327.85,4826.31,2327.85 C4826.31,2327.85,5255.04,1744.61,5255.04,1744.61 C5297.42,1686.96,5286.78,1606.11,5230.91,1561.41 C5230.91,1561.41,5037.51,1399.92,5037.51,1399.92 C5033.89,1396.9,5034.14,1391.26,5038.01,1388.58 C5038.01,1388.58,5113.12,1336.53,5113.12,1336.53 C5133.04,1322.72,5133.66,1293.47,5114.33,1278.84 C5114.33,1278.84,4875.9,1103.51,4875.9,1103.51 C4872.48,1100.98,4874.7,1095.56,4878.91,1096.17 C4878.91,1096.17,4945.1,1096.1,4945.1,1096.1 C4981.58,1096.06,5010.47,1065.26,5008.18,1028.83 C5008.18,1028.83,4983.64,694.781,4983.64,694.781 C4982.79,683.215,4979.06,672.044,4972.81,662.282 C4972.81,662.282,4892.12,536.387,4892.12,536.387 C4864.7,493.615,4803.94,489.115,4770.53,527.382 C4770.53,527.382,4522.49,820.761,4522.49,820.761 C4522.49,820.761,4172.52,817.169,4172.52,817.169 C4172.52,817.169,3925.7,639.518,3794.11,544.806 C3765.67,524.336,3726.14,549.893,3732.94,584.28 C3759.95,720.826,3807.41,960.741,3821.92,1034.13 C3823.79,1043.54,3835.64,1046.87,3842.49,1040.14 C3842.49,1040.14,3928.84,955.357,3928.84,955.357 C3935.49,948.833,3938.27,939.323,3936.19,930.245 C3936.19,930.245,3889.55,757.235,3889.55,757.235 C3887.75,750.536,3895.63,745.489,3900.95,749.935 C3900.95,749.935,4047.41,872.249,4047.41,872.249 C4047.41,872.25,3830.07,1129.63,3725.47,1253.5 C3711.7,1269.8,3730,1293.63,3749.68,1285.37 C3749.68,1285.37,4073.31,1144.47,4073.31,1144.47 C4078.73,1142.11,4084.8,1146.06,4084.84,1151.97 C4084.84,1151.97,4061.68,1249.25,4061.68,1249.25 C4056.41,1271.42,4079.39,1289.68,4099.77,1279.52 C4099.77,1279.52,4371.17,1144.22,4371.17,1144.22 C4371.17,1144.21,4371.17,1144.21,4371.17,1144.22 C4371.17,1144.22,4745.11,1563.93,4745.11,1563.93 C4745.11,1563.93,4745.11,1563.93,4745.11,1563.93 C4745.11,1563.93,4572.8,1564.17,4572.8,1564.17 z M4623.85,908.268 C4623.85,908.268,4783.01,1034.79,4783.01,1034.79 C4783.01,1034.79,4880.43,789.232,4880.43,789.232 C4882.34,784.403,4882.1,778.985,4879.76,774.347 C4883.44,781.64,4810.4,649.203,4810.4,649.203 C4810.4,649.203,4623.85,908.268,4623.85,908.268 z"/>
+                <path id="am5" fill="currentColor" d="M3535.45,1384.37 C3535.45,1384.37,4332.79,1351.21,4332.79,1351.21 C4349.9,1350.49,4364.42,1363.63,4365.44,1380.73 C4370.56,1466.66,4359.88,1690.88,4175.33,1702.97 C3979.32,1715.81,4000.93,1440.05,4000.93,1440.05 C4000.93,1440.05,3792.87,1450.43,3792.87,1450.43 C3792.87,1450.43,3792.06,1522.94,3805.33,1597.11 C3807.29,1608.08,3801.08,1618.86,3790.61,1622.64 C3758.45,1634.27,3690.79,1657.25,3642.47,1663.47 C3603.25,1668.52,3580.29,1659.11,3567.51,1636.36 C3498.71,1513.92,3535.45,1384.37,3535.45,1384.37 z"/>
+                <path id="am6" fill="currentColor" d="M3465.6,1804.09 C3467.17,1829.23,3476.31,1853.31,3491.81,1873.17 C3491.81,1873.17,3673.76,2106.38,3673.76,2106.38 C3678.03,2111.85,3685.02,2114.42,3691.81,2113.02 C3691.81,2113.02,4140.24,2020.57,4140.24,2020.57 C4173.9,2013.63,4196.1,1981.37,4190.59,1947.44 C4186.37,1921.51,4160.83,1904.79,4135.4,1911.31 C4135.4,1911.31,3738.23,2023.39,3738.23,2023.39 C3732.71,2024.94,3726.79,2023.09,3723.14,2018.66 C3723.14,2018.66,3624.01,1910.78,3624.01,1910.78 C3617.54,1903.73,3617.69,1892.85,3624.37,1885.99 C3624.37,1885.99,3712.91,1794.2,3712.91,1794.2 C3721.64,1785.15,3721.5,1770.76,3712.6,1761.88 C3712.6,1761.88,3645.89,1695.35,3645.89,1695.35 C3638.55,1688.02,3523.65,1693.84,3487.74,1735.09 C3468.64,1757.03,3464.23,1782.2,3465.6,1804.09 z"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">Random Wheel</span>
+          <span class="brand-subtitle">by Comsan</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button id="tab-wheel" class="tab-btn active" data-tab="wheel">
+          วงล้อ
+        </button>
+        <button id="tab-history" class="tab-btn" data-tab="history">
+          ประวัติ
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button id="btn-sound-toggle" class="icon-btn" title="เปิด/ปิดเสียง" aria-label="Toggle Sound">
+          <svg id="icon-sound-on" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg id="icon-sound-off" class="hidden" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+        <button id="btn-help" class="icon-btn" title="วิธีใช้งาน" aria-label="Help Guide">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </button>
+        <button id="btn-settings" class="icon-btn" title="ตั้งค่า" aria-label="Settings">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <!-- WHEEL VIEW -->
+    <section id="view-wheel" class="view-section active">
+      <div class="wheel-layout">
+        <!-- Left Column: Wheel Display -->
+        <div class="wheel-column">
+          <!-- Active Wheel Container -->
+          <div id="wheel-stage" class="wheel-stage">
+            <div class="canvas-container">
+              <div class="pointer-wrapper">
+                <div id="wheel-pointer" class="wheel-pointer">
+                  <svg viewBox="0 0 32 38" width="32" height="38">
+                    <path d="M4 3 L28 3 L16 34 Z" fill="#1E293B" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <canvas id="wheelCanvas"></canvas>
+              <button id="btn-center-hub" class="center-hub-button" title="คลิกเพื่อสุ่ม" aria-label="Spin Wheel">
+                <svg viewBox="3465.37 501.284 2289.26 1997.43" class="center-icon-svg" width="32" height="32" fill="currentColor">
+                  <g id="am1">
+                    <g id="am2">
+                      <path fill="currentColor" d="M5445.71,1802.99 C5423.49,1744.45,5344.26,1735.89,5310.05,1788.33 C5310.05,1788.33,5001.33,2261.57,5001.33,2261.57 C4949.59,2340.88,5007.68,2445.77,5102.32,2443.93 C5102.32,2443.93,5671.37,2432.87,5671.37,2432.87 C5743.66,2431.47,5781.11,2345.97,5733.14,2291.84 C5733.14,2291.84,5575.07,2113.42,5575.07,2113.42 C5561.76,2098.41,5551.3,2081.1,5544.17,2062.35 C5544.17,2062.35,5445.71,1802.99,5445.71,1802.99 z"/>
+                      <path fill="currentColor" d="M4572.8,1564.17 C4572.8,1564.17,4572.8,1564.17,4572.8,1564.18 C4572.8,1564.18,4867.11,1764.71,4867.11,1764.71 C4867.11,1764.71,4867.11,1764.72,4867.1,1764.72 C4867.1,1764.72,4578.83,1821.63,4578.83,1821.63 C4578.83,1821.63,4578.83,1821.63,4578.83,1821.63 C4578.83,1821.63,4435.19,2380.97,4435.19,2380.97 C4435.19,2380.98,4435.19,2380.98,4435.19,2380.98 C4085.44,2434.14,4000.17,2231.06,3981.45,2161.78 C3975.41,2139.45,3956.92,2122.68,3934.12,2118.86 C3926.96,2117.67,3920.6,2118.02,3914.96,2119.58 C3892.45,2125.79,3881.64,2151.16,3879.2,2173.14 C3878.41,2180.22,3878.94,2187.39,3880.74,2194.28 C3899.31,2265.23,4057.45,2750.28,4826.31,2327.86 C4826.31,2327.86,4826.31,2327.85,4826.31,2327.85 C4826.31,2327.85,5255.04,1744.61,5255.04,1744.61 C5297.42,1686.96,5286.78,1606.11,5230.91,1561.41 C5230.91,1561.41,5037.51,1399.92,5037.51,1399.92 C5033.89,1396.9,5034.14,1391.26,5038.01,1388.58 C5038.01,1388.58,5113.12,1336.53,5113.12,1336.53 C5133.04,1322.72,5133.66,1293.47,5114.33,1278.84 C5114.33,1278.84,4875.9,1103.51,4875.9,1103.51 C4872.48,1100.98,4874.7,1095.56,4878.91,1096.17 C4878.91,1096.17,4945.1,1096.1,4945.1,1096.1 C4981.58,1096.06,5010.47,1065.26,5008.18,1028.83 C5008.18,1028.83,4983.64,694.781,4983.64,694.781 C4982.79,683.215,4979.06,672.044,4972.81,662.282 C4972.81,662.282,4892.12,536.387,4892.12,536.387 C4864.7,493.615,4803.94,489.115,4770.53,527.382 C4770.53,527.382,4522.49,820.761,4522.49,820.761 C4522.49,820.761,4172.52,817.169,4172.52,817.169 C4172.52,817.169,3925.7,639.518,3794.11,544.806 C3765.67,524.336,3726.14,549.893,3732.94,584.28 C3759.95,720.826,3807.41,960.741,3821.92,1034.13 C3823.79,1043.54,3835.64,1046.87,3842.49,1040.14 C3842.49,1040.14,3928.84,955.357,3928.84,955.357 C3935.49,948.833,3938.27,939.323,3936.19,930.245 C3936.19,930.245,3889.55,757.235,3889.55,757.235 C3887.75,750.536,3895.63,745.489,3900.95,749.935 C3900.95,749.935,4047.41,872.249,4047.41,872.249 C4047.41,872.25,3830.07,1129.63,3725.47,1253.5 C3711.7,1269.8,3730,1293.63,3749.68,1285.37 C3749.68,1285.37,4073.31,1144.47,4073.31,1144.47 C4078.73,1142.11,4084.8,1146.06,4084.84,1151.97 C4084.84,1151.97,4061.68,1249.25,4061.68,1249.25 C4056.41,1271.42,4079.39,1289.68,4099.77,1279.52 C4099.77,1279.52,4371.17,1144.22,4371.17,1144.22 C4371.17,1144.21,4371.17,1144.21,4371.17,1144.22 C4371.17,1144.22,4745.11,1563.93,4745.11,1563.93 C4745.11,1563.93,4745.11,1563.93,4745.11,1563.93 C4745.11,1563.93,4572.8,1564.17,4572.8,1564.17 z M4623.85,908.268 C4623.85,908.268,4783.01,1034.79,4783.01,1034.79 C4783.01,1034.79,4880.43,789.232,4880.43,789.232 C4882.34,784.403,4882.1,778.985,4879.76,774.347 C4883.44,781.64,4810.4,649.203,4810.4,649.203 C4810.4,649.203,4623.85,908.268,4623.85,908.268 z"/>
+                      <path fill="currentColor" d="M3535.45,1384.37 C3535.45,1384.37,4332.79,1351.21,4332.79,1351.21 C4349.9,1350.49,4364.42,1363.63,4365.44,1380.73 C4370.56,1466.66,4359.88,1690.88,4175.33,1702.97 C3979.32,1715.81,4000.93,1440.05,4000.93,1440.05 C4000.93,1440.05,3792.87,1450.43,3792.87,1450.43 C3792.87,1450.43,3792.06,1522.94,3805.33,1597.11 C3807.29,1608.08,3801.08,1618.86,3790.61,1622.64 C3758.45,1634.27,3690.79,1657.25,3642.47,1663.47 C3603.25,1668.52,3580.29,1659.11,3567.51,1636.36 C3498.71,1513.92,3535.45,1384.37,3535.45,1384.37 z"/>
+                      <path fill="currentColor" d="M3465.6,1804.09 C3467.17,1829.23,3476.31,1853.31,3491.81,1873.17 C3491.81,1873.17,3673.76,2106.38,3673.76,2106.38 C3678.03,2111.85,3685.02,2114.42,3691.81,2113.02 C3691.81,2113.02,4140.24,2020.57,4140.24,2020.57 C4173.9,2013.63,4196.1,1981.37,4190.59,1947.44 C4186.37,1921.51,4160.83,1904.79,4135.4,1911.31 C4135.4,1911.31,3738.23,2023.39,3738.23,2023.39 C3732.71,2024.94,3726.79,2023.09,3723.14,2018.66 C3723.14,2018.66,3624.01,1910.78,3624.01,1910.78 C3617.54,1903.73,3617.69,1892.85,3624.37,1885.99 C3624.37,1885.99,3712.91,1794.2,3712.91,1794.2 C3721.64,1785.15,3721.5,1770.76,3712.6,1761.88 C3712.6,1761.88,3645.89,1695.35,3645.89,1695.35 C3638.55,1688.02,3523.65,1693.84,3487.74,1735.09 C3468.64,1757.03,3464.23,1782.2,3465.6,1804.09 z"/>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="wheel-hint-text">แตะเพื่อหมุน หรือกด Ctrl+Enter</p>
+          </div>
+
+          <!-- Empty State (Shown when 0 items) -->
+          <div id="empty-state" class="empty-state hidden">
+            <div class="empty-wheel-mockup">
+              <div class="empty-pointer">
+                <svg viewBox="0 0 28 32" width="28" height="32">
+                  <path d="M4 3 L24 3 L14 29 Z" fill="#202A36" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="mockup-circle">
+                <div class="mockup-spoke spoke-1"></div>
+                <div class="mockup-spoke spoke-2"></div>
+                <div class="mockup-spoke spoke-3"></div>
+                <div class="mockup-spoke spoke-4"></div>
+                <div class="mockup-center-hub">
+                  <svg viewBox="3465.37 501.284 2289.26 1997.43" width="22" height="22" fill="#A0AEC0">
+                    <g id="am1">
+                      <g id="am2">
+                        <path fill="#A0AEC0" d="M5445.71,1802.99 C5423.49,1744.45,5344.26,1735.89,5310.05,1788.33 C5310.05,1788.33,5001.33,2261.57,5001.33,2261.57 C4949.59,2340.88,5007.68,2445.77,5102.32,2443.93 C5102.32,2443.93,5671.37,2432.87,5671.37,2432.87 C5743.66,2431.47,5781.11,2345.97,5733.14,2291.84 C5733.14,2291.84,5575.07,2113.42,5575.07,2113.42 C5561.76,2098.41,5551.3,2081.1,5544.17,2062.35 C5544.17,2062.35,5445.71,1802.99,5445.71,1802.99 z"/>
+                        <path fill="#A0AEC0" d="M4572.8,1564.17 C4572.8,1564.17,4572.8,1564.17,4572.8,1564.18 C4572.8,1564.18,4867.11,1764.71,4867.11,1764.71 C4867.11,1764.71,4867.11,1764.72,4867.1,1764.72 C4867.1,1764.72,4578.83,1821.63,4578.83,1821.63 C4578.83,1821.63,4578.83,1821.63,4578.83,1821.63 C4578.83,1821.63,4435.19,2380.97,4435.19,2380.97 C4435.19,2380.98,4435.19,2380.98,4435.19,2380.98 C4085.44,2434.14,4000.17,2231.06,3981.45,2161.78 C3975.41,2139.45,3956.92,2122.68,3934.12,2118.86 C3926.96,2117.67,3920.6,2118.02,3914.96,2119.58 C3892.45,2125.79,3881.64,2151.16,3879.2,2173.14 C3878.41,2180.22,3878.94,2187.39,3880.74,2194.28 C3899.31,2265.23,4057.45,2750.28,4826.31,2327.86 C4826.31,2327.86,4826.31,2327.85,4826.31,2327.85 C4826.31,2327.85,5255.04,1744.61,5255.04,1744.61 C5297.42,1686.96,5286.78,1606.11,5230.91,1561.41 C5230.91,1561.41,5037.51,1399.92,5037.51,1399.92 C5033.89,1396.9,5034.14,1391.26,5038.01,1388.58 C5038.01,1388.58,5113.12,1336.53,5113.12,1336.53 C5133.04,1322.72,5133.66,1293.47,5114.33,1278.84 C5114.33,1278.84,4875.9,1103.51,4875.9,1103.51 C4872.48,1100.98,4874.7,1095.56,4878.91,1096.17 C4878.91,1096.17,4945.1,1096.1,4945.1,1096.1 C4981.58,1096.06,5010.47,1065.26,5008.18,1028.83 C5008.18,1028.83,4983.64,694.781,4983.64,694.781 C4982.79,683.215,4979.06,672.044,4972.81,662.282 C4972.81,662.282,4892.12,536.387,4892.12,536.387 C4864.7,493.615,4803.94,489.115,4770.53,527.382 C4770.53,527.382,4522.49,820.761,4522.49,820.761 C4522.49,820.761,4172.52,817.169,4172.52,817.169 C4172.52,817.169,3925.7,639.518,3794.11,544.806 C3765.67,524.336,3726.14,549.893,3732.94,584.28 C3759.95,720.826,3807.41,960.741,3821.92,1034.13 C3823.79,1043.54,3835.64,1046.87,3842.49,1040.14 C3842.49,1040.14,3928.84,955.357,3928.84,955.357 C3935.49,948.833,3938.27,939.323,3936.19,930.245 C3936.19,930.245,3889.55,757.235,3889.55,757.235 C3887.75,750.536,3895.63,745.489,3900.95,749.935 C3900.95,749.935,4047.41,872.249,4047.41,872.249 C4047.41,872.25,3830.07,1129.63,3725.47,1253.5 C3711.7,1269.8,3730,1293.63,3749.68,1285.37 C3749.68,1285.37,4073.31,1144.47,4073.31,1144.47 C4078.73,1142.11,4084.8,1146.06,4084.84,1151.97 C4084.84,1151.97,4061.68,1249.25,4061.68,1249.25 C4056.41,1271.42,4079.39,1289.68,4099.77,1279.52 C4099.77,1279.52,4371.17,1144.22,4371.17,1144.22 C4371.17,1144.21,4371.17,1144.21,4371.17,1144.22 C4371.17,1144.22,4745.11,1563.93,4745.11,1563.93 C4745.11,1563.93,4745.11,1563.93,4745.11,1563.93 C4745.11,1563.93,4572.8,1564.17,4572.8,1564.17 z M4623.85,908.268 C4623.85,908.268,4783.01,1034.79,4783.01,1034.79 C4783.01,1034.79,4880.43,789.232,4880.43,789.232 C4882.34,784.403,4882.1,778.985,4879.76,774.347 C4883.44,781.64,4810.4,649.203,4810.4,649.203 C4810.4,649.203,4623.85,908.268,4623.85,908.268 z"/>
+                        <path fill="#A0AEC0" d="M3535.45,1384.37 C3535.45,1384.37,4332.79,1351.21,4332.79,1351.21 C4349.9,1350.49,4364.42,1363.63,4365.44,1380.73 C4370.56,1466.66,4359.88,1690.88,4175.33,1702.97 C3979.32,1715.81,4000.93,1440.05,4000.93,1440.05 C4000.93,1440.05,3792.87,1450.43,3792.87,1450.43 C3792.87,1450.43,3792.06,1522.94,3805.33,1597.11 C3807.29,1608.08,3801.08,1618.86,3790.61,1622.64 C3758.45,1634.27,3690.79,1657.25,3642.47,1663.47 C3603.25,1668.52,3580.29,1659.11,3567.51,1636.36 C3498.71,1513.92,3535.45,1384.37,3535.45,1384.37 z"/>
+                        <path fill="#A0AEC0" d="M3465.6,1804.09 C3467.17,1829.23,3476.31,1853.31,3491.81,1873.17 C3491.81,1873.17,3673.76,2106.38,3673.76,2106.38 C3678.03,2111.85,3685.02,2114.42,3691.81,2113.02 C3691.81,2113.02,4140.24,2020.57,4140.24,2020.57 C4173.9,2013.63,4196.1,1981.37,4190.59,1947.44 C4186.37,1921.51,4160.83,1904.79,4135.4,1911.31 C4135.4,1911.31,3738.23,2023.39,3738.23,2023.39 C3732.71,2024.94,3726.79,2023.09,3723.14,2018.66 C3723.14,2018.66,3624.01,1910.78,3624.01,1910.78 C3617.54,1903.73,3617.69,1892.85,3624.37,1885.99 C3624.37,1885.99,3712.91,1794.2,3712.91,1794.2 C3721.64,1785.15,3721.5,1770.76,3712.6,1761.88 C3712.6,1761.88,3645.89,1695.35,3645.89,1695.35 C3638.55,1688.02,3523.65,1693.84,3487.74,1735.09 C3468.64,1757.03,3464.23,1782.2,3465.6,1804.09 z"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h2 class="empty-title">ยังไม่มีรายการ</h2>
+            <p class="empty-subtitle">เพิ่มรายการและกำหนดโอกาส (%) ของแต่ละตัว แล้วกดสุ่มได้เลย</p>
+            <div class="empty-actions">
+              <button id="btn-empty-add" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                เพิ่มรายการแรก
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Probability Editor Panel -->
+        <div id="editor-column" class="editor-column">
+          <div class="card editor-card">
+            <!-- Header -->
+            <div class="card-header">
+              <h3 class="card-title">
+                รายการ <span id="item-count" class="count-badge">0 รายการ</span>
+              </h3>
+              <div class="remove-winner-toggle-wrapper" title="เมื่อสุ่มได้รายการใด จะลบรายการนั้นออกจากวงล้อและปรับ % ให้อัตโนมัติ">
+                <span class="remove-winner-label">ลบเมื่อสุ่มได้</span>
+                <label class="toggle-switch toggle-switch-sm">
+                  <input type="checkbox" id="toggle-remove-winner">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Items List -->
+            <div id="items-list" class="items-list">
+              <!-- Dynamically populated rows -->
+            </div>
+
+            <!-- Total Percentage Status -->
+            <div class="total-status-container">
+              <div class="total-label">รวมทั้งหมด</div>
+              <div id="total-status" class="total-status valid">
+                <span id="total-percentage" class="percentage-val">100%</span>
+                <span id="status-icon" class="status-icon">
+                  <!-- Green Checkmark -->
+                  <svg class="icon-valid" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <!-- Warning/Error Icon -->
+                  <svg class="icon-invalid hidden" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Status message warning if not 100% -->
+            <div id="status-message" class="status-message hidden"></div>
+
+            <!-- Spin Button -->
+            <button id="btn-spin" class="btn-spin" disabled>
+              <span class="spin-text">สุ่ม</span>
+            </button>
+
+            <!-- Quick Actions Grid -->
+            <div class="quick-actions-grid">
+              <button id="btn-action-equal" class="quick-action-btn" title="ตั้งค่าโอกาสให้เท่ากันทุกตัวเลือก">
+                <div class="action-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="M7 21h10"></path>
+                    <path d="M12 3v18"></path>
+                    <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                  </svg>
+                </div>
+                <span class="action-label">แบ่งเท่า</span>
+              </button>
+
+              <button id="btn-action-normalize" class="quick-action-btn" title="ปรับสัดส่วนทั้งหมดให้รวมเป็น 100%">
+                <div class="action-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                    <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                    <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <span class="action-label">ปรับ 100%</span>
+              </button>
+
+              <button id="btn-action-add" class="quick-action-btn" title="เพิ่มรายการใหม่">
+                <div class="action-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+                <span class="action-label">เพิ่มรายการ</span>
+              </button>
+
+              <button id="btn-action-clear" class="quick-action-btn" title="ล้างรายการทั้งหมด">
+                <div class="action-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 6h18"></path>
+                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                  </svg>
+                </div>
+                <span class="action-label">ล้างรายการ</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY VIEW -->
+    <section id="view-history" class="view-section">
+      <div class="history-container">
+        <div class="history-header-block">
+          <h1 class="history-main-title">ประวัติการสุ่ม</h1>
+          <p class="history-subtitle">ผลการสุ่ม 10 ครั้งล่าสุด</p>
+        </div>
+
+        <!-- Summary Stats Badges -->
+        <div id="history-summary-bar" class="history-summary-bar">
+          <!-- Dynamically populated stat pills (e.g. A x5 50%) -->
+        </div>
+
+        <!-- History Table Card -->
+        <div class="card history-card">
+          <div class="history-card-header">
+            <div class="history-card-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>ประวัติการสุ่ม 10 ครั้งล่าสุด</span>
+            </div>
+            <button id="btn-clear-history" class="btn-text-danger" title="ล้างประวัติการสุ่มทั้งหมด" aria-label="ล้างประวัติ">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"></path>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+              </svg>
+              <span class="btn-clear-text">ล้างประวัติ</span>
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th class="th-num">#</th>
+                  <th class="th-result">ผลลัพธ์</th>
+                  <th class="th-prob">โอกาส</th>
+                  <th class="th-time">เวลา</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty History State -->
+          <div id="history-empty" class="history-empty hidden">
+            <div class="history-empty-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <p>ยังไม่มีประวัติการสุ่ม</p>
+            <button id="btn-history-go-spin" class="btn btn-secondary btn-sm">ไปที่หน้าวงล้อเพื่อเริ่มสุ่ม</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RESULT MODAL -->
+  <div id="result-modal" class="modal-backdrop">
+    <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+    <div class="modal-card result-card" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title">ผลลัพธ์</h3>
+        <button id="btn-close-result" class="modal-close-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body result-body">
+        <div class="result-display-wrapper">
+          <div id="result-color-circle" class="result-color-circle"></div>
+          <h1 id="result-text" class="result-text">A</h1>
+        </div>
+        <p class="result-prob-badge">
+          โอกาสที่กำหนด: <strong id="result-prob-value">50%</strong>
+        </p>
+        <div id="result-removed-badge" class="result-removed-badge hidden">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span>ลบรายการนี้ออกจากวงล้อแล้ว</span>
+        </div>
+      </div>
+
+      <div class="modal-footer result-footer">
+        <button id="btn-spin-again" class="btn btn-primary btn-lg">สุ่มอีกครั้ง</button>
+        <button id="btn-close-result-bottom" class="btn btn-outline btn-lg">ปิด</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HELP / USER GUIDE MODAL -->
+  <div id="help-modal" class="modal-backdrop">
+    <div class="modal-card help-card" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title">วิธีใช้งาน</h3>
+        <button id="btn-close-help" class="modal-close-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body help-body">
+        <div class="guide-item">
+          <span class="guide-title">1. การหมุนวงล้อ</span>
+          <div class="guide-desc">
+            <ul class="guide-list">
+              <li>แตะหรือคลิกที่ <strong>ตัววงล้อ</strong> หรือ <strong>โลโก้ตรงกลาง</strong> เพื่อเริ่มสุ่ม</li>
+              <li>คลิกที่ปุ่มสีส้ม <strong>"สุ่ม"</strong> ที่แผงด้านข้าง</li>
+              <li>กดคีย์ลัด <code>Ctrl + Enter</code> (หรือ <code>Cmd + Enter</code>) ได้จากทุกที่</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-item">
+          <span class="guide-title">2. การจัดการรายการ</span>
+          <div class="guide-desc">
+            <ul class="guide-list">
+              <li><strong>เพิ่มรายการ</strong>: กดปุ่ม <code>+ เพิ่มรายการ</code> หรือพิมพ์ในช่องชื่อแล้วกด <code>Enter</code></li>
+              <li><strong>วางข้อความหลายบรรทัด</strong>: คัดลอกข้อความแล้วกด Paste ระบบจะแยกเป็นแต่ละรายการให้อัตโนมัติ</li>
+              <li><strong>เปลี่ยนสี</strong>: คลิกที่จุดสีด้านหน้ารายการ เพื่อเลือกเปลี่ยนสีจากพาเลตสดใส</li>
+              <li><strong>เรียงลำดับ</strong>: ลากไอคอน <code>⠿</code> ด้านซ้ายสุดเพื่อสลับตำแหน่งรายการ</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-item">
+          <span class="guide-title">3. โหมดความน่าจะเป็น (Probability)</span>
+          <div class="guide-desc">
+            <ul class="guide-list">
+              <li><strong>โหมดเท่ากัน (Default)</strong>: หน้าจอเรียบง่าย แบ่งโอกาสสุ่มให้ทุกรายการเท่ากัน 100/N % อัตโนมัติ</li>
+              <li><strong>โหมดกำหนด % เอง</strong>: เปิดใช้งานได้ในเมนูการตั้งค่า เพื่อพิมพ์กำหนด % โอกาสของแต่ละรายการ</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-item">
+          <span class="guide-title">4. ตัวเลือกการตั้งค่าขั้นสูง</span>
+          <div class="guide-desc">
+            <ul class="guide-list">
+              <li><strong>ซ่อนเปอร์เซ็นต์บนวงล้อ</strong>: แสดงเฉพาะชื่อรายการบนวงล้อ</li>
+              <li><strong>ขนาดช่องเท่ากันทุกช่อง</strong>: แสดงความกว้างเท่ากันทุกช่อง แม้ว่า % โอกาสจะไม่เท่ากัน</li>
+              <li><strong>ลบตัวเลือกที่สุ่มได้ออก</strong>: ตัดรายการที่ชนะออกจากวงล้ออัตโนมัติ</li>
+              <li><strong>ปรับระยะเวลาการหมุน</strong>: ตั้งเวลาได้ตั้งแต่ 2.0 – 10.0 วินาที</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-item">
+          <span class="guide-title">5. คีย์ลัดบนแป้นพิมพ์</span>
+          <div class="guide-desc">
+            <div class="guide-shortcuts-grid">
+              <div class="shortcut-pill"><code>Ctrl + Enter</code><span>หมุนวงล้อทันที</span></div>
+              <div class="shortcut-pill"><code>Spacebar</code><span>หมุนวงล้อ</span></div>
+              <div class="shortcut-pill"><code>Enter</code><span>ไปช่องถัดไป</span></div>
+              <div class="shortcut-pill"><code>1 - 9</code><span>สั่งผลลัพธ์ลับ</span></div>
+              <div class="shortcut-pill"><code>0 / Esc</code><span>ยกเลิกผลลับ</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-close-help-bottom" class="btn btn-primary" style="margin-left: auto;">ปิดหน้าต่าง</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div id="settings-modal" class="modal-backdrop">
+    <div class="modal-card settings-card" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title">การตั้งค่า</h3>
+        <button id="btn-close-settings" class="modal-close-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body settings-body">
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="setting-duration" class="setting-label">ระยะเวลาในการหมุน (วินาที)</label>
+            <span class="setting-desc">เวลาที่วงล้อใช้หมุนก่อนจะหยุด</span>
+          </div>
+          <div class="setting-control">
+            <input type="range" id="setting-duration" min="2" max="10" step="0.5" value="5">
+            <span id="duration-val" class="range-val">5.0s</span>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-label">ลบตัวเลือกที่สุ่มได้ออก</span>
+            <span class="setting-desc">ลบรายการที่ชนะออกจากวงล้อ และ Normalize % ให้อัตโนมัติ</span>
+          </div>
+          <div class="setting-control">
+            <label class="toggle-switch">
+              <input type="checkbox" id="setting-remove-winner-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-label">เสียงเอฟเฟกต์ (Sound FX)</span>
+            <span class="setting-desc">เสียงคลิกระหว่างหมุนและเสียงเมื่อได้ผลลัพธ์</span>
+          </div>
+          <div class="setting-control">
+            <label class="toggle-switch">
+              <input type="checkbox" id="setting-sound-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-label">กำหนดเปอร์เซ็นต์โอกาสเอง (Custom %)</span>
+            <span class="setting-desc">เปิดเพื่อพิมพ์กำหนด % โอกาสของแต่ละรายการแยกกัน (หากปิด ทุกรายการจะได้รับโอกาสเท่ากันเสมอ)</span>
+          </div>
+          <div class="setting-control">
+            <label class="toggle-switch">
+              <input type="checkbox" id="setting-custom-prob-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-label">ซ่อนเปอร์เซ็นต์บนวงล้อ</span>
+            <span class="setting-desc">แสดงเฉพาะชื่อรายการบนวงล้อ โดยซ่อนตัวเลขโอกาส (%)</span>
+          </div>
+          <div class="setting-control">
+            <label class="toggle-switch">
+              <input type="checkbox" id="setting-hide-percent-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-label">ขนาดช่องบนวงล้อเท่ากันทุกช่อง</span>
+            <span class="setting-desc">แสดงความกว้างของทุกช่องเท่ากันทั้งหมด แม้ว่า % โอกาสจะไม่เท่ากัน (คำนวณผลตาม % จริง)</span>
+          </div>
+          <div class="setting-control">
+            <label class="toggle-switch">
+              <input type="checkbox" id="setting-equal-slices-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-label">เอฟเฟกต์พลุกระดาษ (Confetti)</span>
+            <span class="setting-desc">แสดงเอฟเฟกต์พลุเมื่อสุ่มเสร็จสิ้น</span>
+          </div>
+          <div class="setting-control">
+            <label class="toggle-switch">
+              <input type="checkbox" id="setting-confetti-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-reset-defaults" class="btn btn-secondary">คืนค่าเริ่มต้น</button>
+        <button id="btn-save-settings" class="btn btn-primary">บันทึก</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Picker Popover (Hidden by default) -->
+  <div id="color-palette-popover" class="color-palette-popover hidden">
+    <div class="palette-grid" id="palette-grid">
+      <!-- Generated via JS -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
