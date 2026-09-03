@@ -1,0 +1,17 @@
+{
+  "name": "comsan-wheel",
+  "version": "1.0.0",
+  "description": "Comsan Random Wheel Application with Clean Routing and Production Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "random-wheel",
+    "roulette",
+    "probability"
+  ],
+  "author": "Comsan",
+  "license": "MIT"
+}

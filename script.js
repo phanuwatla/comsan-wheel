@@ -42,10 +42,10 @@
       duration: 5.0,
       soundEnabled: true,
       confettiEnabled: true,
-      removeWinnerOnSpin: false,
+      removeWinnerOnSpin: true,
       hidePercentage: true,
       equalSliceVisual: false,
-      customProbEnabled: false
+      customProbEnabled: true
     },
     isSpinning: false,
     currentRotation: 0, // in degrees
@@ -1254,9 +1254,17 @@
       viewHistory?.classList.toggle('active', !isWheel);
 
       if (updateUrl) {
-        const targetHash = isWheel ? '#/wheel' : '#/history';
-        if (window.location.hash !== targetHash && !(isWheel && (window.location.hash === '' || window.location.hash === '#/' || window.location.hash === '#'))) {
-          history.pushState(null, '', targetHash);
+        const isHttp = window.location.protocol.startsWith('http');
+        if (isHttp) {
+          const targetPath = isWheel ? '/wheel' : '/history';
+          if (window.location.pathname !== targetPath) {
+            history.pushState(null, '', targetPath);
+          }
+        } else {
+          const targetHash = isWheel ? '#/wheel' : '#/history';
+          if (window.location.hash !== targetHash && !(isWheel && (window.location.hash === '' || window.location.hash === '#/' || window.location.hash === '#'))) {
+            history.pushState(null, '', targetHash);
+          }
         }
       }
 
@@ -1268,22 +1276,16 @@
     }
 
     function handleRoute() {
-      const hash = window.location.hash.toLowerCase();
-      if (hash.includes('history')) {
-        closeSettings(false);
-        closeHelp(false);
+      const path = (window.location.pathname + window.location.hash).toLowerCase();
+      if (path.includes('history')) {
         switchTab('history', false);
-      } else if (hash.includes('settings')) {
-        closeHelp(false);
+      } else if (path.includes('settings')) {
         switchTab('wheel', false);
-        openSettings(false);
-      } else if (hash.includes('help') || hash.includes('guide')) {
-        closeSettings(false);
+        openSettings();
+      } else if (path.includes('help') || path.includes('guide')) {
         switchTab('wheel', false);
-        openHelp(false);
+        openHelp();
       } else {
-        closeSettings(false);
-        closeHelp(false);
         switchTab('wheel', false);
       }
     }
@@ -1393,25 +1395,17 @@
     const btnCloseHelp = document.getElementById('btn-close-help');
     const btnCloseHelpBottom = document.getElementById('btn-close-help-bottom');
 
-    function openHelp(updateUrl = true) {
-      if (updateUrl && window.location.hash !== '#/help') {
-        history.pushState(null, '', '#/help');
-      }
-      settingsModal?.classList.remove('open');
+    function openHelp() {
       helpModal?.classList.add('open');
     }
 
-    function closeHelp(updateUrl = true) {
+    function closeHelp() {
       helpModal?.classList.remove('open');
-      if (updateUrl && window.location.hash === '#/help') {
-        const activeHash = tabHistory?.classList.contains('active') ? '#/history' : '#/wheel';
-        history.pushState(null, '', activeHash);
-      }
     }
 
-    btnHelp?.addEventListener('click', () => openHelp(true));
-    btnCloseHelp?.addEventListener('click', () => closeHelp(true));
-    btnCloseHelpBottom?.addEventListener('click', () => closeHelp(true));
+    btnHelp?.addEventListener('click', openHelp);
+    btnCloseHelp?.addEventListener('click', closeHelp);
+    btnCloseHelpBottom?.addEventListener('click', closeHelp);
 
     // Settings Modal
     const settingsModal = document.getElementById('settings-modal');
@@ -1436,12 +1430,8 @@
       settingDuration.style.background = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${pct}%, #EDF2F7 ${pct}%, #EDF2F7 100%)`;
     }
 
-    function openSettings(updateUrl = true) {
+    function openSettings() {
       if (!settingsModal) return;
-      if (updateUrl && window.location.hash !== '#/settings') {
-        history.pushState(null, '', '#/settings');
-      }
-      helpModal?.classList.remove('open');
       if (settingDuration) {
         settingDuration.value = state.settings.duration;
         durationVal.textContent = `${state.settings.duration.toFixed(1)}s`;
@@ -1456,16 +1446,12 @@
       settingsModal.classList.add('open');
     }
 
-    function closeSettings(updateUrl = true) {
+    function closeSettings() {
       settingsModal?.classList.remove('open');
-      if (updateUrl && window.location.hash === '#/settings') {
-        const activeHash = tabHistory?.classList.contains('active') ? '#/history' : '#/wheel';
-        history.pushState(null, '', activeHash);
-      }
     }
 
-    btnSettings?.addEventListener('click', () => openSettings(true));
-    btnCloseSettings?.addEventListener('click', () => closeSettings(true));
+    btnSettings?.addEventListener('click', openSettings);
+    btnCloseSettings?.addEventListener('click', closeSettings);
 
     settingCustomProbToggle?.addEventListener('change', (e) => {
       state.settings.customProbEnabled = e.target.checked;
@@ -1518,10 +1504,10 @@
         duration: 5.0,
         soundEnabled: true,
         confettiEnabled: true,
-        removeWinnerOnSpin: false,
+        removeWinnerOnSpin: true,
         hidePercentage: true,
         equalSliceVisual: false,
-        customProbEnabled: false
+        customProbEnabled: true
       };
       if (settingDuration) {
         settingDuration.value = 5.0;
@@ -1530,11 +1516,10 @@
       }
       if (settingSoundToggle) settingSoundToggle.checked = true;
       if (settingConfettiToggle) settingConfettiToggle.checked = true;
-      if (settingRemoveWinnerToggle) settingRemoveWinnerToggle.checked = false;
-      if (settingCustomProbToggle) settingCustomProbToggle.checked = false;
+      if (settingRemoveWinnerToggle) settingRemoveWinnerToggle.checked = true;
+      if (settingCustomProbToggle) settingCustomProbToggle.checked = true;
       if (settingHidePercentToggle) settingHidePercentToggle.checked = true;
       if (settingEqualSlicesToggle) settingEqualSlicesToggle.checked = false;
-      equalizeProbabilities();
       updateRemoveWinnerUI();
       saveSettingsToStorage();
       renderEditorItems();
